@@ -7,13 +7,13 @@ class OtpInputFieldWidget extends StatefulWidget {
   final OtpInputController otpController;
   final Function(String) onComplete;
 
-  OtpInputFieldWidget({required this.otpController, required this.onComplete});
+  const OtpInputFieldWidget({super.key, required this.otpController, required this.onComplete});
 
   @override
-  _OtpInputFieldWidgetState createState() => _OtpInputFieldWidgetState();
+  OtpInputFieldWidgetState createState() => OtpInputFieldWidgetState();
 }
 
-class _OtpInputFieldWidgetState extends State<OtpInputFieldWidget> {
+class OtpInputFieldWidgetState extends State<OtpInputFieldWidget> {
   @override
   void initState() {
     super.initState();
@@ -44,7 +44,7 @@ class _OtpInputFieldWidgetState extends State<OtpInputFieldWidget> {
             inputFormatters: [SingleDigitInputFormatter()],
             // maxLength: 1,
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(10),
+              contentPadding: const EdgeInsets.all(10),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),

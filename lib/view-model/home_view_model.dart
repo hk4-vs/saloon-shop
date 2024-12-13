@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-import '../data/response/api_response.dart';
 import '../repository/home_repository.dart';
 
 class HomeViewViewModel with ChangeNotifier {

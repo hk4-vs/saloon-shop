@@ -55,9 +55,11 @@ dependencies:
   hive: ^2.2.3
   flutter_otp_text_field: ^1.1.2+1
   pin_input_text_field: ^4.5.1
+  intl: ^0.19.0
   
   
 
+  path_provider: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

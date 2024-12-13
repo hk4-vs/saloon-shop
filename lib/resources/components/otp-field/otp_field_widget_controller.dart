@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OtpInputController {
-  List<TextEditingController> _textControllers = [];
+  final List<TextEditingController> _textControllers = [];
 
   void initializeControllers() {
     for (int i = 0; i < 6; i++) {

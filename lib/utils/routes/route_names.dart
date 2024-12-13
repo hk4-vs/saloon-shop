@@ -9,7 +9,11 @@ class RouteNames{
   static const String forgetPassword = '/forgetPassword';
   static const String userRegisterView = "/userRegisterView";
   static const String userOtpVerificationView = "/userOtpVerificationView";
-  static const String shopRegisterView = "/shopRegisterView";
+  static const String defaultRoute = "/defaultRoute";
+  static const String saloonDetailsView = "/saloonDetailsView";
+  static const String bookingPreviewView = "/bookingPreviewView";
+  static const String bookingConfirmationView = "/bookingConfirmationView";
+
   
 
 }

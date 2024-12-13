@@ -1,6 +1,6 @@
 import 'package:barber/resources/components/app_title_widget.dart';
-import 'package:barber/resources/components/category_widget.dart';
-import 'package:barber/resources/components/recommended_card_widget.dart';
+import 'package:barber/views/user/home/widgets/category_widget.dart';
+import 'package:barber/views/user/home/widgets/recommended_card_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,60 +20,60 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         title: Text(
-          "Hi, Vishal",
+          "Hi, Vinay",
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         actions: [
           GestureDetector(
             child: Container(
-                padding: const EdgeInsets.all(4),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Theme.of(context).highlightColor),
-                child: const Icon(Icons.notifications)),
+                child: const Icon(Icons.notifications_outlined)),
           ),
           const SizedBox(
             width: 16,
           ),
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
-              bannerSlider(),
-              const AppTitleWidget(title: "Categories"),
-              const CategoriesWidget(),
-              const SizedBox(
+              // bannerSlider(),
+              AppTitleWidget(title: "Categories"),
+              CategoriesWidget(),
+              SizedBox(
                 height: 20,
               ),
-              const AppTitleWidget(title: "Recommended"),
-              const SizedBox(
+              AppTitleWidget(title: "Recommended"),
+              SizedBox(
                 height: 10,
               ),
-              const RecommendedCartWidget(),
-              const SizedBox(
+              RecommendedCartWidget(),
+              SizedBox(
                 height: 20,
               ),
-              const AppTitleWidget(title: "Near You"),
-              const SizedBox(
+              AppTitleWidget(title: "Near You"),
+              SizedBox(
                 height: 10,
               ),
-              const RecommendedCartWidget(),
-              const SizedBox(
+              RecommendedCartWidget(),
+              SizedBox(
                 height: 20,
               ),
-              const AppTitleWidget(title: "Populer"),
-              const SizedBox(
+              AppTitleWidget(title: "Populer"),
+              SizedBox(
                 height: 10,
               ),
-              const RecommendedCartWidget(),
-              const SizedBox(
+              RecommendedCartWidget(),
+              SizedBox(
                 height: 20,
               ),
             ],

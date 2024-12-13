@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../resources/components/custom_input_fields.dart';
-import '../../utils/routes/route_names.dart';
 import '../../utils/utils.dart';
 import '../../view-model/auth_view_model.dart';
 
@@ -56,7 +55,7 @@ class _UserRegisterViewState extends State<UserRegisterView> {
                                     image: DecorationImage(
                                         fit: BoxFit.cover,
                                         image: AssetImage(
-                                            "assets/images/splash_image.jpg"))),
+                                            "assets/images/image3.jpg"))),
                               )),
                         ),
                         const SizedBox(
@@ -192,7 +191,7 @@ class _UserRegisterViewState extends State<UserRegisterView> {
                             ),
                           ),
                           child: provider.loading
-                              ? CircularProgressIndicator(
+                              ? const CircularProgressIndicator(
                                   color: Colors.white,
                                 )
                               : Text("Register",
@@ -229,23 +228,6 @@ class _UserRegisterViewState extends State<UserRegisterView> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("If you want to add your shop? ",
-                                style: Theme.of(context).textTheme.bodyMedium),
-                            TextButton(
-                                onPressed: () => Navigator.pushNamed(
-                                    context, RouteNames.shopRegisterView),
-                                child: Text("Register as Shop",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            color: Theme.of(context)
-                                                .primaryColor)))
-                          ],
-                        )
                       ]),
                 ),
               ),

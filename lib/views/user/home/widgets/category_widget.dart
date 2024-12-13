@@ -180,6 +180,34 @@ class CategoriesWidget extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(
+            width: 20,
+          ),
+          Column(
+            children: [
+              Container(
+                height: 80,
+                width: 80,
+                padding: const EdgeInsets.all(20),
+                margin: const EdgeInsets.only(bottom: 8),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+                child: const Image(
+                  image: AssetImage(
+                    "assets/icons/henna.png",
+                  ),
+                  height: 60,
+                  width: 60,
+                ),
+              ),
+              Text(
+                "Menhadee",
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ),
         ],
       ),
     );

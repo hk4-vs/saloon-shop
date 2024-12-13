@@ -1,10 +1,11 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 import 'package:share_plus/share_plus.dart';
 
-class Utils{
-    // this for show toast
+class Utils {
+  // this for show toast
   static toastMessage(String message) {
     Fluttertoast.showToast(msg: message);
   }
@@ -76,5 +77,10 @@ class Utils{
     Share.share(text);
   }
 
+  static width(BuildContext context) => MediaQuery.of(context).size.width;
 
+  static height(BuildContext context) => MediaQuery.of(context).size.height;
+  static String weekDay(DateTime dateTime) {
+    return DateFormat('EEE').format(dateTime);
+  }
 }

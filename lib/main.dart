@@ -1,7 +1,6 @@
-import 'dart:io';
 
 import 'package:barber/resources/themes/themes.dart';
-import 'package:barber/views/user/dashboard/dashboard_view.dart';
+import 'package:barber/views/login/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -10,9 +9,7 @@ import 'package:provider/provider.dart';
 import 'data/models/hive_models/user_hive_model.dart';
 import 'utils/routes/routes.dart';
 import 'view-model/auth_view_model.dart';
-import 'views/intro-pages/intro1_view.dart';
-import 'views/intro-pages/intro_view.dart';
-import 'views/shop-owner/create-owner/create_owner_view.dart';
+
 import 'package:hive/hive.dart';
 
 import 'views/user-register/resend_timer_provider.dart';
@@ -42,7 +39,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: MyTheme.lightTheme(),
-        home: IntroView(),
+        // home: IntroView(),
+        home: const LoginView(),
         onGenerateRoute: Routes.genrateRoute,
       ),
     );

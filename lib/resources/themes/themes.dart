@@ -10,14 +10,7 @@ class MyTheme {
         focusColor: const Color(0xffFED9ED),
         colorScheme: const ColorScheme.light(
             error: Color(0xffFE0000), primary: Color(0xffD0A2F7)),
-        // textTheme: const TextTheme(
-        // headlineSmall: GoogleFonts.rubik(fontWeight: FontWeight.w500),
-        // bodyMedium: GoogleFonts.poppins(),
-        // titleLarge: GoogleFonts.poppins(fontWeight: FontWeight.w500),
-        // titleMedium: GoogleFonts.poppins(fontWeight: FontWeight.w500),
-        // labelLarge:
-        //     GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 20),
-        // ),
+        
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xffFED9ED),

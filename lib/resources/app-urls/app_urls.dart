@@ -1,5 +1,6 @@
 class AppUrls {
-  static const String baseUrl = "https://barber.samacharsafar.com/api";
+  static const String baseUrl = "https://bookmysaloan.com/api";
+  // static const String baseUrl = "https://barber.samacharsafar.com/api";
 
   // for login
   static const String login = "$baseUrl/login";
@@ -12,7 +13,7 @@ class AppUrls {
 
   //  for shop owner register
   static const String shopRegister = "$baseUrl/shop-owner/register";
-  
+
   static const String verifyOtp = "$baseUrl/user/verify-otp";
 
   // // for upload profile image

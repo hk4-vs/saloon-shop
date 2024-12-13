@@ -7,7 +7,7 @@ class CountdownProvider extends ChangeNotifier {
 
   CountdownProvider(int initialValue) {
     _countdown = initialValue;
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_countdown > 0) {
         _countdown--;
         notifyListeners();

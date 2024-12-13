@@ -72,7 +72,7 @@ class AuthViewModel with ChangeNotifier {
       await _myRepo.userRegisterApi(data.toJson()).then((value) {
         setLoading(false);
         log("response log: $value");
-        data.verification_id = value['verification_id'].toString();
+        data.verificationID = value['verification_id'].toString();
 
         Utils.toastMessage("send otp to ${data.email}");
 
@@ -115,7 +115,7 @@ class AuthViewModel with ChangeNotifier {
       });
     } catch (e) {
       setLoading(false);
-      Utils.flushBarErrorMessage(e.toString(), context);
+      // Utils.flushBarErrorMessage(e.toString(), context);
     }
   }
 // this fun are uncomment when i'm done it

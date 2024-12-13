@@ -3,11 +3,7 @@ import 'dart:developer';
 import 'package:barber/data/models/user_register_model.dart';
 import 'package:barber/view-model/auth_view_model.dart';
 import 'package:barber/views/user-register/resend_timer_provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
 
 import '../../resources/components/otp-field/otp_field_widget.dart';
@@ -37,7 +33,7 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
                 children: [
                   Expanded(
                       child: Image.asset("assets/animations/enter-otp.png")),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -61,14 +57,14 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   OtpInputFieldWidget(
                     otpController: otpController,
                     onComplete: (value) {},
                   ),
-                  Expanded(
+                  const Expanded(
                     child: SizedBox(
                       height: 20,
                     ),
@@ -77,7 +73,7 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Do not recieve the OTP? '),
+                        const Text('Do not recieve the OTP? '),
                         (value.countdown > 0)
                             ? Text(
                                 '00:${value.countdown}',
@@ -109,7 +105,7 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
                       ],
                     );
                   }),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   ElevatedButton(
@@ -121,8 +117,8 @@ class _OtpVerificationViewState extends State<OtpVerificationView> {
                             widget.userRegistrationModel.toJson(), context);
                       },
                       child: provider.loading
-                          ? CircularProgressIndicator()
-                          : Text("Submit"))
+                          ? const CircularProgressIndicator()
+                          : const Text("Submit"))
                 ],
               ),
             ),
