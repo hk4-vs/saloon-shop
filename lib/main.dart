@@ -1,4 +1,3 @@
-
 import 'package:barber/resources/themes/themes.dart';
 import 'package:barber/views/login/login_view.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,10 @@ import 'view-model/auth_view_model.dart';
 
 import 'package:hive/hive.dart';
 
+import 'view-model/home_view_model.dart';
+import 'views/splash-view.dart';
 import 'views/user-register/resend_timer_provider.dart';
+import 'views/user/home/home_view.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
@@ -22,6 +24,8 @@ void main() async {
   // Hive.registerAdapter(HiveLoginResponseAdapter());
   Hive.registerAdapter<HiveUser>(HiveUserAdapter());
   Hive.registerAdapter(HiveLoginResponseAdapter());
+
+  await Hive.openBox('user');
 
   runApp(const MyApp());
 }
@@ -34,13 +38,15 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
+        ChangeNotifierProvider(create: (_) => HomeViewViewModel()),
+        
         ChangeNotifierProvider(create: (_) => CountdownProvider(60)),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: MyTheme.lightTheme(),
         // home: IntroView(),
-        home: const LoginView(),
+        home: const SplashView(),
         onGenerateRoute: Routes.genrateRoute,
       ),
     );

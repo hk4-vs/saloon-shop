@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/shops_model.dart';
+
 class SaloonCardWidget extends StatelessWidget {
   const SaloonCardWidget({
     super.key,
+    required this.shopModel,
   });
+  final ShopsModel shopModel;
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +30,14 @@ class SaloonCardWidget extends StatelessWidget {
             height: 120,
             width: 210,
             margin: const EdgeInsets.only(bottom: 10),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.amber,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16)),
                 image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage("assets/images/image3.jpg"))),
+                    image: NetworkImage(shopModel.shopPhoto.toString()))),
           ),
           SizedBox(
             width: 210,
@@ -42,7 +46,7 @@ class SaloonCardWidget extends StatelessWidget {
                 SizedBox(
                   width: 160,
                   child: Text(
-                    "Saloon Name $int",
+                    shopModel.shopName.toString(),
                     style: Theme.of(context).textTheme.titleMedium,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -73,7 +77,7 @@ class SaloonCardWidget extends StatelessWidget {
               SizedBox(
                 width: 210 - 30,
                 child: Text(
-                  "Mohba Bajar Raipur,492010 sdfsald, asdjflskdjf, sdafjlsdjk ,sadaf",
+                  shopModel.shopAddress.toString(),
                   style: Theme.of(context).textTheme.bodyMedium,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

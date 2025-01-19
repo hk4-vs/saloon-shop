@@ -1,6 +1,8 @@
 class AppUrls {
-  static const String baseUrl = "https://bookmysaloan.com/api";
+  // static const String baseUrl = "https://bookmysaloan.com/api";
   // static const String baseUrl = "https://barber.samacharsafar.com/api";
+  static const String baseUrl =
+      "https://humble-shark-basically.ngrok-free.app/api";
 
   // for login
   static const String login = "$baseUrl/login";
@@ -15,6 +17,9 @@ class AppUrls {
   static const String shopRegister = "$baseUrl/shop-owner/register";
 
   static const String verifyOtp = "$baseUrl/user/verify-otp";
+
+  // for get all shops list
+  static const String getShopsList = "$baseUrl/shops";
 
   // // for upload profile image
   // static const String uploadUserProfile = "$baseUrl/user/profile";

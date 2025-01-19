@@ -6,15 +6,18 @@ import '../app_exceptions.dart';
 import 'base_api_services.dart';
 
 class NetworkApiService extends BaseApiServices {
-  Map<String, String> headers = {
+  Map<String, String> defaultHeaders = {
     "Accept": "application/json",
     // "Content-Type": "application/json"
   };
   @override
-  Future<dynamic> getGetApiResponses(String url) async {
+  Future<dynamic> getGetApiResponses(
+      String url, Map<String, String>? headers) async {
     dynamic responseJson;
     try {
-      final response = await http.get(Uri.parse(url), headers: headers).timeout(
+      final response = await http
+          .get(Uri.parse(url), headers: headers ?? defaultHeaders)
+          .timeout(
             const Duration(seconds: 20),
           );
 
@@ -34,7 +37,7 @@ class NetworkApiService extends BaseApiServices {
     dynamic responseJson;
     try {
       http.Response response = await http
-          .post(Uri.parse(url), body: data, headers: headers)
+          .post(Uri.parse(url), body: data, headers: defaultHeaders)
           .timeout(const Duration(seconds: 20));
       responseJson = returnResponse(response);
     } on SocketException {

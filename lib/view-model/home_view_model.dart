@@ -1,37 +1,46 @@
+import 'package:barber/data/models/shops_model.dart';
+import 'package:barber/utils/utils.dart';
 import 'package:flutter/material.dart';
 
-
 import '../repository/home_repository.dart';
+import 'user_view_model.dart';
 
 class HomeViewViewModel with ChangeNotifier {
-  final myRepo = HomeRepository();
-  // ApiResponse<NewsModel> usersList = ApiResponse.loading();
-  // setUsersList(ApiResponse<NewsModel> response) {
-  //   usersList = response;
-  //   notifyListeners();
+  // HomeViewViewModel() {
+  //   getShopList();
   // }
+  UserViewModel userPrefrences = UserViewModel();
 
-  Future<void> fetchNewsList() async {
-    //  when data is loading
-    // setUsersList(ApiResponse.loading());
-    // myRepo.getListOfNews().then((value) {
-    //   // when data is completed
-    //   setUsersList(ApiResponse.completed(value));
-    // }).onError((error, stackTrace) {
-    //   //  when data throw some error
-    //   setUsersList(ApiResponse.error(error.toString()));
-    // });
+  bool _isLoading = false;
+
+  bool get isLoading => _isLoading;
+
+  set isLoading(bool value) {
+    _isLoading = value;
+    notifyListeners();
   }
 
-  Future<void> getSearchQueryOfNews(String query) async {
-    //  when data is loading
-    // setUsersList(ApiResponse.loading());
-    // myRepo.getSearchQueryOfNews(query).then((value) {
-    //   // when data is completed
-    //   setUsersList(ApiResponse.completed(value));
-    // }).onError((error, stackTrace) {
-    //   //  when data throw some error
-    //   setUsersList(ApiResponse.error(error.toString()));
-    // });
+  final myRepo = HomeRepository();
+
+  List<ShopsModel> _shopList = [];
+
+  List<ShopsModel> get shopList => _shopList;
+
+  set shopList(List<ShopsModel> value) {
+    _shopList = value;
+    notifyListeners();
+  }
+
+  Future<void> getShopList() async {
+    isLoading = true;
+    try {
+      shopList = await myRepo
+          .getListOfShops(userPrefrences.getUser()!.accessToken.toString());
+      isLoading = false;
+    } catch (e) {
+      isLoading = false;
+      Utils.toastMessage("Something went wrong");
+      rethrow;
+    }
   }
 }

@@ -24,8 +24,9 @@ class UserViewModel with ChangeNotifier {
     return true;
   }
 
-  Future<HiveLoginResponse> getUser() async {
-    return Hive.box('user').get('user');
+  HiveLoginResponse? getUser() {
+    var user = Hive.box('user').get('user');
+    return user;
   }
 
   // Future<bool> updateUserToSaveData(String field, String data) async {
