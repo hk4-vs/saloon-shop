@@ -50,49 +50,54 @@ class _HomeViewState extends State<HomeView> {
               ),
             ],
           ),
-          body: const SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(
-                    height: 30,
-                  ),
-                  // bannerSlider(),
-                  AppTitleWidget(title: "Categories"),
-                  CategoriesWidget(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  AppTitleWidget(title: "Recommended"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  RecommendedCartWidget(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  AppTitleWidget(title: "Near You"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  RecommendedCartWidget(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  AppTitleWidget(title: "Populer"),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  RecommendedCartWidget(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          body: provider.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : provider.shopList.isEmpty
+                  ? const Center(child: Text("No Shop Found"))
+                  : const SingleChildScrollView(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 10.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(
+                              height: 30,
+                            ),
+                            // bannerSlider(),
+                            AppTitleWidget(title: "Categories"),
+                            CategoriesWidget(),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            AppTitleWidget(title: "Recommended"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            RecommendedCartWidget(),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            AppTitleWidget(title: "Near You"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            RecommendedCartWidget(),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            AppTitleWidget(title: "Populer"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            RecommendedCartWidget(),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
         );
       },
     );

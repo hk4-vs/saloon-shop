@@ -24,10 +24,15 @@ class _SplashViewState extends State<SplashView> {
     return ChangeNotifierProvider(
       create: (_) => splashViewService,
       child: Consumer<SplashViewService>(
-          builder: (context, value, child) => Scaffold(
-              body: Container(
-                  color: Theme.of(context).primaryColor,
-                  child: Center(child: Text("Splash View"))))),
+        builder: (context, value, child) => Scaffold(
+          body: Container(
+            color: Theme.of(context).primaryColor,
+            child: Center(
+              child: Image.asset("assets/images/app-logo.png"),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
